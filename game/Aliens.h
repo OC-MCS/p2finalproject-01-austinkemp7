@@ -16,10 +16,9 @@ class Aliens
 {
 private:
 	list<oneAlien> aliens;
-	spriteManager sMgr;
+	spriteManager spriteMgr;
 public:
-	Aliens(spriteManager &);
+	Aliens(Sprite &, spriteManager &, GameManager &);
 	void moveAliens();
 	void drawAliens(RenderWindow&);
-	void setTexture(Texture);
 };

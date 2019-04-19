@@ -149,6 +149,7 @@
     <ClCompile Include="Aliens.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="missile.cpp" />
     <ClCompile Include="oneAlien.cpp" />
     <ClCompile Include="spriteManager.cpp" />
   </ItemGroup>

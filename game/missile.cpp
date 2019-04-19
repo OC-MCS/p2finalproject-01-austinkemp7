@@ -2,22 +2,19 @@
 // Austin Kemp
 // Due April 19th, 2019
 // Programming 2 Final Project
-// Description: Class Definition for Missiles
+// Description: Class Code for Missiles
 //==================================================================================
-#pragma once
 #include <iostream>
+#include "missile.h"
 using namespace std;
-#include <SFML/Graphics.hpp>
 using namespace sf;
 
-class missile
+void missile::move()
 {
-private:
-	Texture missileTexture;
-	Sprite missile;
+	missile.move(0, -DISTANCE);
+}
 
-	const float DISTANCE = 10.0;
-public:
-	void move();
-	void draw(RenderWindow &);
-};
+void missile::draw(RenderWindow & window)
+{
+	window.draw(missile);
+}

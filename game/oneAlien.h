@@ -10,6 +10,7 @@ using namespace std;
 #include <SFML/Graphics.hpp>
 using namespace sf;
 #include "spriteManager.h"
+#include "GameManager.h"
 
 class oneAlien
 {
@@ -18,7 +19,9 @@ private:
 	Texture alienTexture;
 	float alienPosition;
 public:
-	oneAlien(float, float, spriteManager &);
-	void setPosition(float x, float y);
+	oneAlien(GameManager *, float, float, spriteManager &);
+	Vector2f getPosition();
+	FloatRect getGlobalBounds();
 	void draw(RenderWindow&);
+	void move(float x, float y);
 };

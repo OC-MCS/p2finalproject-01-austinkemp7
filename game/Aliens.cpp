@@ -11,13 +11,15 @@ using namespace sf;
 #include "oneAlien.h"
 using namespace std;
 
-Aliens::Aliens(spriteManager & sMgr)
+Aliens::Aliens(Sprite &b, spriteManager & sMgr, GameManager &gmMgr)
 {
 	for (int i = 0; i < 10; i++)
 	{
-		oneAlien temp(35.0f + (75.0f * i), 10.0f, sMgr);
+		oneAlien temp(&gmMgr, 35.0f + (75.0f * i), 20.0f, sMgr);
 		aliens.push_back(temp);
 	}
+
+	spriteMgr = sMgr;
 }
 
 void Aliens::moveAliens()
@@ -25,7 +27,7 @@ void Aliens::moveAliens()
 	list <oneAlien>::iterator iter;
 	for (iter = aliens.begin(); iter != aliens.end(); iter++)
 	{
-		
+		iter->move(0, 2);
 	}
 }
 
@@ -36,9 +38,4 @@ void Aliens::drawAliens(RenderWindow& window)
 	{
 		iter->draw(window);
 	}
-}
-
-void Aliens::setTexture(Texture alienTexture)
-{
-	
 }

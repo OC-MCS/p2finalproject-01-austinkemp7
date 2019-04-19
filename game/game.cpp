@@ -44,18 +44,6 @@ void moveShip(Sprite& ship)
 	}
 }
 
-void moveAliens(Sprite& alien)
-{
-	const float MOVE_DISTANCE = 5.0;
-
-	if (alien.getPosition().y > 0)
-	{
-		alien.move(-MOVE_DISTANCE, 0);
-	}
-}
-
-
-
 int main()
 {
 	const int WINDOW_WIDTH = 800;
@@ -96,9 +84,10 @@ int main()
 	// We have to give it a "texture" to specify what it looks like
 
 	spriteManager SpriteManager;
+	GameManager gameManager;
 	
 	Sprite background;
-	background.setTexture(starsTexture);
+	//background.setTexture(starsTexture);
 	// The texture file is 640x480, so scale it up a little to cover 800x600 window
 	background.setScale(1.5, 1.5);
 
@@ -116,7 +105,7 @@ int main()
 
 	bool isMissileInFlight = false;
 
-	Aliens listOfAliens(SpriteManager);
+	Aliens listOfAliens(background, SpriteManager, gameManager);
 
 	while (window.isOpen())
 	{

@@ -11,18 +11,28 @@ using namespace sf;
 #include "oneAlien.h"
 #include "spriteManager.h"
 
-oneAlien::oneAlien(float x, float y, spriteManager & sMgr)
+oneAlien::oneAlien(GameManager* gmMgr, float x, float y, spriteManager & sMgr)
 {
 	alien.setPosition(x, y);
 	alien = sMgr.getAlienSprite();
 }
 
-void oneAlien::setPosition(float x, float y)
+Vector2f oneAlien::getPosition()
 {
-	alien.setPosition(x, y);
+	return alien.getPosition();
 }
 
 void oneAlien::draw(RenderWindow& window)
 {
 	window.draw(alien);
+}
+
+FloatRect oneAlien::getGlobalBounds()
+{
+	return alien.getGlobalBounds();
+}
+
+void oneAlien::move(float x, float y)
+{
+	alien.move(x, y);
 }

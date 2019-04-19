@@ -7,7 +7,8 @@
 #include "gameManager.h"
  
 GameManager::GameManager() {
-	if (!menuFont.loadFromFile("VT323-Regular.ttf")) {
+	if (!menuFont.loadFromFile("C:\\Windows\\Fonts\\arial.ttf"))
+	{
 		cout << "Unable to load menu font!" << endl;
 		exit(EXIT_FAILURE);
 	}
